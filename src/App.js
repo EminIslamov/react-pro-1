@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       Список дел:
-      {loading ? 'Идет загрузка' : todos.map(todo => {
+      {loading ? <div>Идет загрузка...</div> : todos.map(todo => {
           return(
               <div>
                 <div className='skyblue'> id {todo.id}:</div>
