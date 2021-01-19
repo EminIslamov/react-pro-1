@@ -26,9 +26,6 @@ const reducer = (state = initialState, action) => {
                     loading: false
                 }
 
-
-
-
         default:
             return state;
     }
@@ -39,7 +36,10 @@ const store = createStore(reducer, applyMiddleware(thunk))
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-        <App />
+
+        <div className="container">
+            <App/>
+        </div>
     </Provider>
 
   </React.StrictMode>,

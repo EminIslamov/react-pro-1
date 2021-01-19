@@ -1,6 +1,10 @@
 body {
     background-color: papayawhip;
 }
+.container {
+    width: 600px;
+    margin: auto;
+}
 .skyblue {
     color: deepskyblue;
 }
@@ -11,6 +15,7 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 10px;
+    align-items: center;
 }
 .title {
     margin-right: 5px;
@@ -22,4 +27,17 @@ body {
 }
 .body {
     margin-right: 5px;
+}
+.header {
+    border-bottom: 1px solid;
+    font-size: 2em;
+    text-align: center;
+    padding:10px;
+}
+.todo{
+  padding: 20px 10px;
+  font-size: 20px;
+  border-bottom: 1px solid;
+
+
 }
