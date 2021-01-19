@@ -1,43 +1,23 @@
-body {
-    background-color: papayawhip;
-}
 .container {
-    width: 600px;
-    margin: auto;
-}
-.skyblue {
-    color: deepskyblue;
-}
-.flex {
-    display: flex;
-}
-.sectionTitle {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    align-items: center;
-}
-.title {
-    margin-right: 5px;
-}
-.bodySection {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-}
-.body {
-    margin-right: 5px;
+ width: 600px;
+ margin: auto;
 }
 .header {
-    border-bottom: 1px solid;
+    border-bottom: 1px solid lavender ;
     font-size: 2em;
     text-align: center;
     padding:10px;
 }
 .todo{
   padding: 20px 10px;
+  border-bottom: 1px solid whitesmoke;
   font-size: 20px;
-  border-bottom: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-
+}
+.title {
+    flex: 1;
+    margin-left: 20px;
 }

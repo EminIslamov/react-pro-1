@@ -19,21 +19,15 @@ function App() {
       {loading ? <div>Идет загрузка...</div> : todos.map(todo => {
           return(
               <div className='todo'>
-                <div> id {todo.id}:</div>
-                <div className='sectionTitle flex'>
+                <div>
                   <input type="checkbox"/>
-                  <div className='title '>title:</div>
-                  {todo.title}
                 </div>
-                <div className='bodySection flex'>
-                  <div className='body'>
-                    body:
-                  </div>
-                  {todo.body}
+                <div className='title'>{todo.title}</div>
+                <div className='actions'>
+                  <button>
+                    delete
+                  </button>
                 </div>
-                <button>
-                  delete
-                </button>
               </div>
           )
         }) }
