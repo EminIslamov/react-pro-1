@@ -1,7 +1,7 @@
 export const loadTodos = () => {
     return  (dispatch) => {
         dispatch({type: 'start'})
-        fetch("https://jsonplaceholder.typicode.com/photos/?_limit=20")
+        fetch("https://jsonplaceholder.typicode.com/todos")
             .then(response => response.json())
             .then(json => {
                 dispatch({
@@ -11,9 +11,10 @@ export const loadTodos = () => {
             })
     }
 }
+
 export const deleteTodo = (id) => {
   return (dispatch) => {
-    fetch(`https://jsonplaceholder.typicode.com/photos/?_limit=20${id}`, {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
       method: 'DELETE'
     })
       .then(response => response.json())
@@ -25,3 +26,23 @@ export const deleteTodo = (id) => {
       })
   }
 }
+
+export const checkTodo = (id, completed) => {
+  return (dispatch) => {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({completed: !completed}),
+      headers: {
+        "Content-type": "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(() => {
+        dispatch({
+          type: 'check',
+          payload: id
+        })
+      })
+  }
+}
+
