@@ -21,3 +21,13 @@
     flex: 1;
     margin-left: 20px;
 }
+.imagesDiv {
+    width: 150px;
+}
+.image {
+    width: 100%;
+}
+.btn {
+    background-color: #00000000;
+    color: red;
+}

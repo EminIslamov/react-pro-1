@@ -26,6 +26,14 @@ const reducer = (state = initialState, action) => {
                     loading: false
                 }
 
+        case 'delete':
+            return {
+                ...state,
+                todos: state.todos.filter(todo => {
+                    return todo.id !== action.payload
+                })
+            }
+
         default:
             return state;
     }
