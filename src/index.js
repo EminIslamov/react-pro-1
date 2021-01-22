@@ -26,6 +26,21 @@ const reducer = (state = initialState, action) => {
                     loading: false
                 }
 
+        case 'start_deleting':
+            return {
+                ...state,
+                todos: state.todos.map(todo => {
+                    if (todo.id === action.payload) {
+                        return {
+                            ...todo,
+                            deleting: true
+                        }
+                    }
+
+                    return todo
+                })
+            }
+
         case 'delete':
             return {
                 ...state,
@@ -59,7 +74,6 @@ const store = createStore(reducer, applyMiddleware(thunk))
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-
         <div className="container">
             <App/>
         </div>
