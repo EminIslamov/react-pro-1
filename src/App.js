@@ -2,6 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import { checkTodo, deleteTodo, loadTodos } from './actions'
 import Header from './Header'
+import ReactLoading from 'react-loading';
 
 
 function App() {
@@ -29,10 +30,18 @@ function App() {
           return(
               <div className='todo'>
                 <div>
-                  <input type="checkbox"
-                  checked={todo.completed}
-                  onChange={() => handleCheck(todo.id, todo.completed)}
-                  />
+                  {todo.checking ? (
+                      <div className="load"><ReactLoading
+                        color="#0033ff"
+                        type="spin"
+                        width={16}
+                        height={16}/>
+                      </div>
+                    ) :
+                    <input type="checkbox"
+                    checked={todo.completed}
+                    onChange={() => handleCheck(todo.id, todo.completed)}
+                  />}
                 </div>
                 <div className='title'>{todo.title}</div>
                 <div className='actions'>
